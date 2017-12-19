@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 18, 2017 3:36:40 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.pizza.entity.Order" table="PIZZA_ORDER">
+        <id name="orderId" type="long">
+            <column name="ORDERID" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="customer" class="com.pizza.entity.Customer" fetch="join">
+            <column name="CUSTOMER" />
+        </many-to-one>
+        <set name="item" table="ITEM" inverse="false" lazy="true" cascade="all" fetch="join">
+            <key>
+                <column name="ORDERID" />
+            </key>
+            <one-to-many class="com.pizza.entity.Item" />
+        </set>
+        <property name="orderDate" type="java.sql.Date">
+            <column name="ORDERDATE" />
+        </property>
+        <property name="total" type="double">
+            <column name="TOTAL" />
+        </property>
+    </class>
+</hibernate-mapping>

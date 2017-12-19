@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2017 1:38:19 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.pizza.entity.SeatStatus" table="SEATSTATUS">
+        <id name="statusId" type="long">
+            <column name="STATUSID" />
+            <generator class="increment" />
+        </id>
+        <property name="availableSeats" type="int">
+            <column name="AVAILABLESEATS" />
+        </property>
+        <property name="dateOfBooking" type="java.sql.Date" access="field" unique="true">
+            <column name="DATEOFBOOKING" />
+        </property>
+    </class>
+</hibernate-mapping>

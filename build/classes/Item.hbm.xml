@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 18, 2017 3:36:40 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.pizza.entity.Item" table="ITEM">
+        <id name="itemId" type="long">
+            <column name="ITEMID" />
+            <generator class="assigned" />
+        </id>
+        <property name="pizzaId" type="long">
+            <column name="PIZZAID" />
+        </property>
+        <set name="itemComponent" table="ITEMCOMPONENT" inverse="false" lazy="true" cascade="all" fetch="join">
+            <key>
+                <column name="ITEMID" />
+            </key>
+            <one-to-many class="com.pizza.entity.ItemComponent" />
+        </set>
+        <property name="size" type="double">
+            <column name="SIZE" />
+        </property>
+        <property name="price" type="double">
+            <column name="PRICE" />
+        </property>
+        <property name="quantity" type="int">
+            <column name="QUANTITY" />
+        </property>
+    </class>
+</hibernate-mapping>

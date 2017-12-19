@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 15, 2017 10:17:05 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.pizza.entity.Customer" table="PIZZACUSTOMER">
+        <id name="customerId" type="long">
+            <column name="CUSTOMERID" />
+            <generator class="increment" />
+        </id>
+        <property name="customerName" type="java.lang.String">
+            <column name="CUSTOMERNAME" />
+        </property>
+        <property name="phoneNumber" type="java.lang.String">
+            <column name="PHONENUMBER" />
+        </property>
+       <component name="address" class="com.pizza.entity.Address">
+			<property name="addressLine1" type="java.lang.String">
+				<column name="addressline1"></column>
+			</property>
+			<property name="addressLine2" type="java.lang.String">
+				<column name="addressline2"></column>
+			</property>
+			
+			<property name="pinCode" type="java.lang.String">
+				<column name="pinCode"></column>
+			</property>
+			<property name="city" type="java.lang.String">
+				<column name="cityName"></column>
+			</property>
+		</component>
+        <property name="userName" type="java.lang.String" unique="true">
+            <column name="USERNAME" />
+        </property>
+        <property name="passWord" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 18, 2017 3:36:40 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.pizza.entity.ItemComponent" table="ITEMCOMPONENT">
+        <id name="ItemComponentId" type="long">
+            <column name="ITEMCOMPONENTID" />
+            <generator class="assigned" />
+        </id>
+        <property name="pizzaId" type="long">
+            <column name="PIZZAID" />
+        </property>
+        <property name="toppingId" type="long">
+            <column name="TOPPINGID" />
+        </property>
+        <property name="price" type="double">
+            <column name="PRICE" />
+        </property>
+    </class>
+</hibernate-mapping>

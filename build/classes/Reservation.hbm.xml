@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2017 5:45:13 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.pizza.entity.Reservation" table="RESERVATION">
+        <id name="reservationId" type="long">
+            <column name="RESERVATIONID" />
+            <generator class="increment" />
+        </id>
+        <property name="customerId" type="long">
+            <column name="CUSTOMERID" />
+        </property>
+        <property name="numberOfSeats" type="int">
+            <column name="NUMBEROFSEATS" />
+        </property>
+        <property name="date" type="java.sql.Date">
+            <column name="DATE" />
+        </property>
+    </class>
+</hibernate-mapping>
