@@ -7,14 +7,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
+<body style="background-image: url('resources/images/back3.jpg'); background-size: cover;">
 <body>
 <form:form action="reserve" method="post" commandName="ReservationCommand">
 <label>Customer Id:</label>
 ${sessionScope.customer.customerId }
+<br>
+
 <label>Number Of seats</label>
+<br>
 <form:select path="numberOfSeats" items="${numberOfSeats}"/>
+<br>
 <label>Date:</label>
-<form:input path="date" type="Date"/>
+<br>
+<form:input path="date" type="Date" min="${currentDate }"  value="${currentDate }"/>
+<br>
 
 <input type="submit" value="submit"/>
 

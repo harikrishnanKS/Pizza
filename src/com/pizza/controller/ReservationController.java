@@ -1,5 +1,11 @@
 package com.pizza.controller;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +31,11 @@ public class ReservationController {
 	public ModelAndView initReserve()
 	
 	{
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		Date today = Calendar.getInstance().getTime();        
+		String reportDate = df.format(today);
+		
+		mdlView.addObject("currentDate",reportDate);
 		mdlView.addObject("ReservationCommand",reservation);
 		mdlView.setViewName("reserve");
 		return mdlView;
@@ -66,6 +77,28 @@ public class ReservationController {
 	return seats;
 	 
 	 
+	}
+	@RequestMapping(value="/viewReserved",method=RequestMethod.GET)
+	public ModelAndView initViewReserved(HttpSession session)
+	{
+	 
+	Customer customerDetails=(Customer) session.getAttribute("customer");
+	long customerId=customerDetails.getCustomerId();
+	System.out.println(customerId);
+	 
+	List<Reservation> reservationList=reservationDao.findReservation(customerId);
+
+	mdlView.addObject("customerReservation",reservationList);
+	System.out.println("List is"+reservationList);
+	mdlView.setViewName("viewReserved");
+	return mdlView;
+	 
+	}
+	@RequestMapping("/login1")
+	public ModelAndView back()
+	{
+		mdlView.setViewName("welcome");
+		return mdlView;
 	}
 
 }

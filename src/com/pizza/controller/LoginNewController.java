@@ -49,7 +49,7 @@ public class LoginNewController {
 	public ModelAndView init(){
 		
 		mdlView.addObject("modelData","");
-		mdlView.setViewName("index1");
+		mdlView.setViewName("index");
 		return mdlView;
 	}
 	@RequestMapping("/register")
@@ -73,7 +73,7 @@ public class LoginNewController {
 		{
 		mdlView.addObject("cust",customer);
 		
-		mdlView.setViewName("index1");
+		mdlView.setViewName("index");
 		}
 		return mdlView;
 		

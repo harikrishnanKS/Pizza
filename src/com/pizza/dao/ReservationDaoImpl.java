@@ -121,6 +121,14 @@ public class ReservationDaoImpl implements GenericDao<Reservation> {
 	{
 		return balanceSeat;
 	}
+	public List<Reservation> findReservation(long customerId)
+	{
+	List<Reservation> availReservation=(List<Reservation>) template.find("from Reservation where customerId="+customerId);
+	System.out.println(availReservation);
+	return availReservation ;
+	 
+	}
+
 
 
 	

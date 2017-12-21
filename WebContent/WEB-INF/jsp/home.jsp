@@ -4,16 +4,50 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 <head>
+<style>
+
+
+a:link, a:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+a:hover, a:active {
+    background-color: red;
+}
+
+
+</style>
+<body style="background-image: url('resources/images/back5.jpg'); background-size: cover;">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Home</title>
 </head>
 <body style="margin-left: 25px;margin-right: 25px;margin-top: 10px">
-<a href="reserve">RESERVE SEATS</a>
+<table>
+<tr>
+<td>
+<a href="reserve">RESERVE SEATS</a></td></tr>
+<br>
+<tr>
+<td>
+<A href="viewReserved">View Reserved Seats</A><br></td></tr>
+<tr>
+<td>
+
+<a href="showOrders">Show orders</a></td></tr>
+<br>
+<tr>
+<td>
+
+</table>
 <div class="row">
 <div class="col-sm-9">${customer.customerName}</div>
-<div class="col-sm-3" style="float:right;">
+<div class="col-sm-3" style="float:right;">5
 	<form action="proceedToCheckOut" method="post">
 		<input type="submit" value="Proceed To CheckOut">
 	</form>
