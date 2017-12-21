@@ -3,16 +3,16 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated Dec 16, 2017 7:55:12 PM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.pizza.entity.Toppings" table="TOPPINGS">
+    <class name="com.pizza.entity.Toppings" table="PIZZA_TOPPINGS_TB">
         <id name="toppingId" type="long">
-            <column name="TOPPINGID" />
+            <column name="PIZZA_TOPPINGS_TOPPINGID_PK" />
             <generator class="increment" />
         </id>
         <property name="price" type="double">
-            <column name="PRICE" />
+            <column name="PIZZA_TOPPINGS_PRICE" />
         </property>
         <property name="toppingName" type="java.lang.String">
-            <column name="TOPPINGNAME" />
+            <column name="PIZZA_TOPPINGS_TOPPINGNAME" />
         </property>
     </class>
 </hibernate-mapping>

@@ -3,19 +3,19 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated Dec 16, 2017 5:45:13 PM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.pizza.entity.Reservation" table="RESERVATION">
+    <class name="com.pizza.entity.Reservation" table="PIZZA_RESERVATION_TB">
         <id name="reservationId" type="long">
-            <column name="RESERVATIONID" />
+            <column name="PIZZA_RESERVATION_RESERVATIONID_PK" />
             <generator class="increment" />
         </id>
         <property name="customerId" type="long">
-            <column name="CUSTOMERID" />
+            <column name="PIZZA_RESERVATION_CUSTOMERID" />
         </property>
         <property name="numberOfSeats" type="int">
-            <column name="NUMBEROFSEATS" />
+            <column name="PIZZA_RESERVATION_NUMBEROFSEATS" />
         </property>
         <property name="date" type="java.sql.Date">
-            <column name="DATE" />
+            <column name="PIZZA_RESERVATION_DATE" />
         </property>
     </class>
 </hibernate-mapping>

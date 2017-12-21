@@ -3,16 +3,16 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated Dec 16, 2017 1:38:19 PM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.pizza.entity.SeatStatus" table="SEATSTATUS">
+    <class name="com.pizza.entity.SeatStatus" table="PIZZA_SEATSTATUS_TB">
         <id name="statusId" type="long">
-            <column name="STATUSID" />
+            <column name="PIZZA_SEATSTATUS_STATUSID_PK" />
             <generator class="increment" />
         </id>
         <property name="availableSeats" type="int">
-            <column name="AVAILABLESEATS" />
+            <column name="PIZZA_SEATSTATUS_AVAILABLESEATS" />
         </property>
         <property name="dateOfBooking" type="java.sql.Date" access="field" unique="true">
-            <column name="DATEOFBOOKING" />
+            <column name="PIZZA_SEATSTATUS_DATEOFBOOKING" />
         </property>
     </class>
 </hibernate-mapping>

@@ -3,19 +3,19 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated Dec 18, 2017 3:36:40 PM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.pizza.entity.ItemComponent" table="ITEMCOMPONENT">
+    <class name="com.pizza.entity.ItemComponent" table="PIZZA_ITEMCOMPONENT_TB">
         <id name="ItemComponentId" type="long">
-            <column name="ITEMCOMPONENTID" />
-            <generator class="assigned" />
+            <column name="PIZZA_ITEMCOMPONENT_ITEMCOMPONENTID_PK" />
+            <generator class="increment" />
         </id>
         <property name="pizzaId" type="long">
-            <column name="PIZZAID" />
+            <column name="PIZZA_ITEMCOMPONENT_PIZZAID" />
         </property>
         <property name="toppingId" type="long">
-            <column name="TOPPINGID" />
+            <column name="PIZZA_ITEMCOMPONENT_TOPPINGID" />
         </property>
-        <property name="price" type="double">
-            <column name="PRICE" />
-        </property>
+       <!--  <property name="price" type="double">
+            <column name="PRICE" /> -->
+    <!--     </property> -->
     </class>
 </hibernate-mapping>

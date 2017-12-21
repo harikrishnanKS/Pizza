@@ -3,25 +3,25 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated Dec 18, 2017 3:36:40 PM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.pizza.entity.Order" table="PIZZA_ORDER">
+    <class name="com.pizza.entity.Order" table="PIZZA_ORDERPIZZA_TB">
         <id name="orderId" type="long">
-            <column name="ORDERID" />
+            <column name="PIZZA_ORDERPIZZA_ORDERID_PK" />
             <generator class="increment" />
         </id>
         <many-to-one name="customer" class="com.pizza.entity.Customer" fetch="join">
-            <column name="CUSTOMER" />
+            <column name="PIZZA_ORDERPIZZA_CUSTOMERID_FK" />
         </many-to-one>
-        <set name="item" table="ITEM" inverse="false" lazy="true" cascade="all" fetch="join">
+        <set name="item" table="PIZZA_ITEM_TB" inverse="false" lazy="true" cascade="all" fetch="join">
             <key>
-                <column name="ORDERID" />
+                <column name="PIZZA_ORDERPIZZA_ORDERID_FK" />
             </key>
             <one-to-many class="com.pizza.entity.Item" />
         </set>
         <property name="orderDate" type="java.sql.Date">
-            <column name="ORDERDATE" />
+            <column name="PIZZA_PIZZA_ORDERDATE" />
         </property>
         <property name="total" type="double">
-            <column name="TOTAL" />
+            <column name="PIZZA_ORDERPIZZA_TOTAL" />
         </property>
     </class>
 </hibernate-mapping>
